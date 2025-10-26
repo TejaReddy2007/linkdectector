@@ -6,8 +6,8 @@ services:
     container_name: sys-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: Neroke106@
-      MYSQL_DATABASE: sys
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
     ports:
       - "3306:3306"
     volumes:
@@ -25,8 +25,8 @@ services:
       - mysql
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/sys
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: Neroke106@
+      SPRING_DATASOURCE_USERNAME: 
+      SPRING_DATASOURCE_PASSWORD: 
       VIRUSTOTAL_API_KEY: ${VIRUSTOTAL_API_KEY}
       GOOGLE_SAFE_BROWSING_API_KEY: ${GOOGLE_SAFE_BROWSING_API_KEY}
       JWT_SECRET: ${JWT_SECRET}
@@ -39,3 +39,4 @@ volumes:
 networks:
   sys-network:
     driver: bridge
+
