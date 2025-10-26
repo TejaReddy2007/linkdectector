@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Guardian - URL Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🛡️ Link Guardian</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Scan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="usernameDisplay"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="scan-section">
+            <h1>Scan a URL for Threats</h1>
+            <p class="subtitle">Check links using VirusTotal, Google Safe Browsing, and Advanced Heuristics</p>
+            
+            <form id="scanForm" class="scan-form">
+                <input type="url" id="urlInput" placeholder="Enter URL to scan..." required>
+                <button type="submit" class="btn-primary">
+                    <span class="btn-text">Scan URL</span>
+                    <span class="btn-loader" style="display:none;">Scanning...</span>
+                </button>
+            </form>
+
+            <div id="scanResults" class="results-container" style="display:none;">
+                <h2>Scan Results</h2>
+                
+                <div class="result-card overall-result">
+                    <h3 id="overallStatus"></h3>
+                    <p id="overallMessage"></p>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h4>🦠 VirusTotal</h4>
+                        <div id="vtResult"></div>
+                    </div>
+                    <div class="result-card">
+                        <h4>🔍 Google Safe Browsing</h4>
+                        <div id="gsbResult"></div>
+                    </div>
+                    <div class="result-card">
+                        <h4>🧠 Heuristic Analysis</h4>
+                        <div id="heuristicResult"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

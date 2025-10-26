@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Reports - Link Guardian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🛡️ Link Guardian</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Scan</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="community.html" class="active">Community</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="usernameDisplay"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="community-section">
+            <h1>Community Reports</h1>
+            <p class="subtitle">Help others by reporting suspicious links</p>
+
+            <div class="report-form-card">
+                <h2>Report a Link</h2>
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label for="reportUrl">URL</label>
+                        <input type="url" id="reportUrl" placeholder="Enter suspicious URL..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportStatus">Status</label>
+                        <select id="reportStatus" required>
+                            <option value="">Select status</option>
+                            <option value="safe">Safe</option>
+                            <option value="unsafe">Unsafe</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportComment">Comment (optional)</label>
+                        <textarea id="reportComment" rows="3" placeholder="Add details..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Submit Report</button>
+                </form>
+                <div id="reportMessage" class="message"></div>
+            </div>
+
+            <div class="reports-list">
+                <h2>Recent Community Reports</h2>
+                <div id="communityReports">
+                    <div class="loading">Loading reports...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/community.js"></script>
+</body>
+</html>

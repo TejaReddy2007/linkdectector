@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan History - Link Guardian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🛡️ Link Guardian</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Scan</a></li>
+                <li><a href="history.html" class="active">History</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="usernameDisplay"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="history-section">
+            <h1>Your Scan History</h1>
+            <p class="subtitle">View all previously scanned URLs</p>
+
+            <div class="filter-bar">
+                <select id="filterStatus">
+                    <option value="all">All Results</option>
+                    <option value="safe">Safe Only</option>
+                    <option value="unsafe">Unsafe Only</option>
+                </select>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <div class="loading">Loading history...</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/history.js"></script>
+</body>
+</html>

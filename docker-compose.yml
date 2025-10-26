@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: sys-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Neroke106@
+      MYSQL_DATABASE: sys
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - sys-network
+
+  backend:
+    build: ./backend
+    container_name: sys-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/sys
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Neroke106@
+      VIRUSTOTAL_API_KEY: ${VIRUSTOTAL_API_KEY}
+      GOOGLE_SAFE_BROWSING_API_KEY: ${GOOGLE_SAFE_BROWSING_API_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+    networks:
+      - sys-network
+
+volumes:
+  mysql_data:
+
+networks:
+  sys-network:
+    driver: bridge
